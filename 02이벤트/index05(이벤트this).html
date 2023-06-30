@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 나 자신을 얻어야할 때.. THIS를 고려, 값이 무엇일 될지는 생각해봐야함 -->
+    
+    <!-- 태그에서의 this는 자기자신(그 태그) -->
+    <button onclick="check(this)">버튼의 이벤트</button>
+
+    <script>
+        function check(a) {
+            //console.log(a); //a는 태그
+            //console.log(a.innerHTML); //html의 inner값(태그 사이의 값(<>이 값!!<>)을 태그형태로 얻음
+            
+            a.innerHTML = "얍!!";
+        }
+
+    </script>
+
+    <button id="btn">이벤트 함수안에서 this</button>
+
+    <script>
+        //js에서 this의 의미 - 선언된 위치에 따라서 달라집니다.(렉시컬스코프)
+
+        var x = 1;
+        function xxx() {
+            console.log(this); //함수 안에서 쓰이는 this = window객체
+            console.log(x); //지역변수 x
+            console.log(this.x); //전역변수 x
+        }
+        xxx();
+
+
+        //이벤트 함수 안에서 this
+
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            console.log(this); //태그 자기자신
+            //헷갈리면 출력하여 확인할 것
+        }
+
+    </script>
+
+
+</body>
+</html>

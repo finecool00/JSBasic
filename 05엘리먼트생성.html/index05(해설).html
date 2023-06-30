@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>할 일 목록 만들기</h3>
+    
+    <form class="myForm">
+        
+        <h3 class="nameTitle"></h3>
+        <input type="text" placeholder="이름을 입력하세요" class="nameInput">
+        <button type="button" id="nameBtn">확인</button>
+        
+    </form>
+
+    <form class="todoForm">
+        <input type="text" placeholder="할 일을 작성하세요" class="todoInput">
+        <button type="button" id="todoBtn">확인</button>
+        
+        <ul class="todoList">
+    
+        </ul>
+    </form>
+        
+
+    <script>
+        var myForm = document.querySelector('.myForm');
+        
+        var nameTitle = myForm.querySelector('.nameTitle');
+        var nameInput = myForm.querySelector('.nameInput');
+        var nameBtn = myForm.querySelector('#nameBtn');
+
+        nameBtn.addEventListener('click', function() {
+
+            nameTitle.innerHTML = nameInput.value + '님 안녕하세요';
+            nameInput.value = ''; //input태그에 입력한 값을 공백으로!!
+            
+            nameInput.style.display = 'none';
+            nameBtn.style.display = 'none';
+
+
+        });
+
+        /////////////////////////////////////////////////////////////
+        var todoForm = document.querySelector('.todoForm');
+
+        var todoInput = todoForm.querySelector(".todoInput");
+        var todoList = todoForm.querySelector(".todoList");
+        var todoBtn = todoForm.querySelector("#todoBtn");
+
+        todoBtn.addEventListener('click', function() {
+            var text = todoInput.value; //값
+            todoInput.value = ''; //값 입력 후 input태그 공백으로!
+
+            var li = document.createElement('li');
+            li.innerHTML = text;
+
+            var button = document.createElement('button');
+            button.innerHTML = '삭제';
+            button.type = 'button';
+
+            //이벤트 중 새롭게 이벤트를 주고 싶을 때(동적으로 생성될 때)
+            //예 : button.onclick = function() {}  (기본이벤트)
+            //예 : button.addeventListener(~, ~) (표준이벤트)
+            //예 : 인라인 이벤트 까지!!! 다 됨!! (인라인이벤트)
+
+            button.onclick = del;
+
+            li.appendChild(button)
+
+            todoList.appendChild(li);
+
+
+            //삭제
+            function del() {
+                this.parentElement.remove();
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

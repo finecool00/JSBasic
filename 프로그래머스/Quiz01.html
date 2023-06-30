@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문제 : 리스트 자르기(Lv0)
+        //var n = 3;
+        var n = 4;
+
+        var slicer = [1, 5, 2];
+        var num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        var a = slicer[0];
+        var b = slicer[1];
+        var c = slicer[2];
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        var answer = new Array();
+
+        switch(n) {
+
+            case 1 : 
+                for(var i = 0; i < b + 1; i++) {
+                    
+                    answer.push(num_list[i]);
+                }
+            break;
+
+            case 2 :
+                for(var i = a; i < num_list.length; i++) {
+                    answer.push(num_list[i]);
+                    console.log(answer);
+                }
+            break;
+
+            case 3 :
+                for(var i = a; i < b + 1; i++) {
+                    answer.push(num_list[i]);
+                    console.log(answer);
+                }
+            break;
+
+            case 4 :
+                for(var i = a; i < b + 1; i += c) {
+                    answer.push(num_list[i]);
+                    console.log(answer);
+                }
+            break;
+
+            default :
+            break;
+        }
+
+
+    </script>
+</body>
+</html>

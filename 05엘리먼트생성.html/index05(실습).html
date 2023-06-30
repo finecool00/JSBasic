@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>할일 목록 만들기</h3>
+
+    <div class="greeting">
+
+    </div>
+
+    <div class="box1">
+        <input type="text" class="user" placeholder="이름을 입력하세요">
+        <button id="btn1">확인</button>
+    </div>
+
+    <div class="box2">
+        <input type="text" class="todo" placeholder="당신의 할일을 적으세요">
+        <button id="btn2">확인</button>
+    </div>
+
+    <ul class="todoList">
+        
+    </ul>
+
+
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var user = document.querySelector('.user');
+        var todo = document.querySelector('.todo');
+        var box1 = document.querySelector('.box1');
+        var box2 = document.querySelector('.box2');
+        var greeting = document.querySelector('.greeting');
+        var todoList = document.querySelector('.todoList')
+
+        btn1.addEventListener('click', nameCheck);
+        btn2.addEventListener('click', addList);
+
+        function nameCheck() {
+            
+            var p = document.createElement('p');
+            
+            greeting.appendChild(p);            
+            p.innerHTML = user.value + '님 안녕하세요';
+
+            box1.style.display = 'none';
+            
+        }
+
+        function addList() {
+            
+            var li = document.createElement('li');
+            var btn3 = document.createElement('button');
+            var text = document.createTextNode(todo.value);
+
+            li.appendChild(text);
+            li.appendChild(btn3);
+            todoList.appendChild(li);
+
+            btn3.innerHTML = 'X';
+            
+            btn3.onclick = function() {
+                li.remove();
+            }
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
