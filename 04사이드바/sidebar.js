@@ -1,6 +1,8 @@
 var menuBtn = document.getElementById("menuBtn");
 var sidenav = document.querySelector(".sidenav");
 
+console.log(sidenav);
+
 menuBtn.addEventListener('click', function() {
 
     console.log(sidenav.style.width);
