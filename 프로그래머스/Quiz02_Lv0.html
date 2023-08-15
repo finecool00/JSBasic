@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- 핸드폰번호 가리기-->    
+    <script>
+
+        let phone_number = '01033334444';
+        // const phone_number = '027778888';
+
+        let number = phone_number.slice(0,phone_number.length - 4);
+
+        number = "*".repeat(number.length) + phone_number.slice(phone_number.length - 4, phone_number.length);
+
+        console.log(number);
+
+
+
+
+    </script>
+
+</body>
+</html>

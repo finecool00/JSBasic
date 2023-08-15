@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let quiz = ["3 - 4 = -3", "5 + 6 = 11"];
+    //let quiz = ["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"];
+    
+    let answer = new Array();
+    let temp = new Array();
+    var result = 0;
+    
+    for(let i = 0; i < quiz.length; i) {
+          temp.push(quiz[i].split(" "));
+
+          if(temp[i][1] === "-") {
+            result = Number(temp[i][0]) - Number(temp[i][2]);
+            if(result === Number(temp[i][4])) {
+              answer.push("O");
+            } else {
+              answer.push("X");
+            }
+          }
+          if(temp[i][1] === "+") {
+            result = Number(temp[i][0]) + Number(temp[i][2]);
+            if(result === Number(temp[i][4])) {
+              answer.push("O");
+            } else {
+              answer.push("X");
+            }
+          }
+          
+    }
+    console.log(answer);
+    
+        //   switch (temp[i][1]) {
+        //     case "+":
+        //       result = temp[i][0] + temp[i][2];
+        //       if(result === temp[i][4]) {
+        //         answer.push("O");
+        //       } else {
+        //         answer.push("X");
+        //       }
+        //       break;
+
+        //     case "-":
+        //       result = temp[i][0] - temp[i][2];
+        //       if(result === temp[i][4]) {
+        //         answer.push("O");
+        //       } else {
+        //         answer.push("X");
+        //       }
+        //       break;
+
+        //     default:
+        //       break;
+        //   }
+          
+          //console.log(temp);
+    
+        // console.log(result);
+        // console.log(answer);
+
+  </script>
+
+
+</body>
+</html>

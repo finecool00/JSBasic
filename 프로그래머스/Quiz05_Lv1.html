@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    //JadenCase문자열 만들기
+    
+    var answer = '';
+    var s = "3people unFollowed me";
+    //var s = "for the last week";
+    
+    //answer = s.charAt(0).toUpperCase();
+    
+    s = s.toLowerCase().split(' ');
+
+    console.log(s);
+
+    // for(var i = 0; i < s.length; i++) {
+    //   answer += s[i][0].toUpperCase() + s[i].substr(1,) + ' ';
+    // }
+
+    
+    var str = s.map( (a) => {
+      answer += a.charAt(0).toUpperCase() + a.substr(1,);
+      answer += ' ';  
+    });
+
+    answer = answer.substr(0, answer.length - 1);
+    
+    console.log(answer);
+
+  </script>
+
+
+
+</body>
+</html>

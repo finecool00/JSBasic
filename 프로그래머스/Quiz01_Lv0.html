@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 문제 : 무작위로 k개의 수 뽑기 -->
+    <script>
+        const arr = [0,1,1,2,2,3];
+        //const arr = [0,1,1,1,1];
+
+        let k = 3;
+        //let k = 4;
+
+        let answer = [];
+
+        // for(let i = 0; i < arr.length; i++) {
+        //     arr[i]
+        // }
+
+            console.log(arr.indexOf(3));
+
+        let arr2 = arr.filter((a, b) => arr.indexOf(a) === b);
+        console.log(arr2);
+
+        
+        
+        if(arr2.length >= k) {
+            for(let i = 0; i < k; i++) {
+                answer.push(arr2[i]);
+                
+               if(i === k - 1) {
+                
+                break;
+               } 
+            }
+        } else if(arr2.length < k) {
+            for(let j = 0; j < arr2.length; j++) {
+                    answer.push(arr2[j]);
+            }
+            for(let i = answer.length; i < k; i++) {
+                answer.push(-1);
+            }
+        }
+        console.log(answer);
+
+    </script>
+
+
+</body>
+</html>
