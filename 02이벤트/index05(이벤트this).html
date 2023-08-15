@@ -28,6 +28,7 @@
 
         var x = 1;
         function xxx() {
+            var x = 10;
             console.log(this); //함수 안에서 쓰이는 this = window객체
             console.log(x); //지역변수 x
             console.log(this.x); //전역변수 x
